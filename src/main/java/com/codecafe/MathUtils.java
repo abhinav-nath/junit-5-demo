@@ -6,4 +6,8 @@ public class MathUtils {
         return a + b;
     }
 
+    public double computeSquareArea(double lengthOfASide) {
+        return lengthOfASide * lengthOfASide;
+    }
+
 }

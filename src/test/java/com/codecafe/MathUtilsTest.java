@@ -11,7 +11,15 @@ class MathUtilsTest {
         MathUtils mathUtils = new MathUtils();
         int expected = 5;
         int actual = mathUtils.add(3, 2);
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, "The add method should add two numbers");
+    }
+
+    @Test
+    void testComputeSquareArea() {
+        MathUtils mathUtils = new MathUtils();
+        double expected = 25.0;
+        double actual = mathUtils.computeSquareArea(6);
+        assertEquals(expected, actual, "Should return right Area of a Square");
     }
 
 }
