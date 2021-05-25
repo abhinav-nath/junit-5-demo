@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 // unordered execution of tests
@@ -43,6 +44,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing add method")
     void testAdd() {
         System.out.println("  testAdd");
         int expected = 5;
@@ -51,12 +53,14 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing divide method")
     void testDivide() {
         System.out.println("  testDivide");
         assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "Divide by zero should throw ArithmeticException");
     }
 
     @Test
+    @DisplayName("Testing computeSquareArea method")
     void testComputeSquareArea() {
         System.out.println("  testComputeSquareArea");
         double expected = 25.0;
