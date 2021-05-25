@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -75,6 +77,25 @@ class MathUtilsTest {
     @DisplayName("Under development! Should not be run!")
     void disabledTest() {
         fail("This test should be disabled");
+    }
+
+    @Test
+    @DisplayName("Assumption")
+    void testAssumption() {
+        System.out.println("  testAssumption");
+        int expected = 5;
+
+        // test will not run
+        int actual = mathUtils.add(3, 5);
+
+        // test will run
+        // int actual = mathUtils.add(3, 2);
+
+        // run the test only if assumption is true
+        // this helps to avoid test failures
+        assumeTrue(actual == expected);
+
+        assertEquals(expected, actual, "The add method should add two numbers");
     }
 
 }
