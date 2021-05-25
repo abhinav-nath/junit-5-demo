@@ -1,5 +1,6 @@
 package com.codecafe;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -61,6 +62,19 @@ class MathUtilsTest {
     void testDivide() {
         System.out.println("  testDivide");
         assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "Divide by zero should throw ArithmeticException");
+    }
+
+    @Test
+    @DisplayName("Testing multiply method")
+    void testMultiply() {
+        System.out.println("  testMultiply");
+
+        assertAll(
+                () -> assertEquals(4, mathUtils.multiply(2, 2), "2 * 2"),
+                () -> assertEquals(0, mathUtils.multiply(2, 0), "2 * 0"),
+                () -> assertEquals(-2, mathUtils.multiply(2, -1), "2 * -1")
+                );
+
     }
 
     @Test
