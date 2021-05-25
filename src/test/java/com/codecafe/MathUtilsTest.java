@@ -83,19 +83,15 @@ class MathUtilsTest {
     @DisplayName("Assumption")
     void testAssumption() {
         System.out.println("  testAssumption");
-        int expected = 5;
 
         // test will not run
-        int actual = mathUtils.add(3, 5);
-
-        // test will run
-        // int actual = mathUtils.add(3, 2);
+        boolean isServerUp = false;
 
         // run the test only if assumption is true
         // this helps to avoid test failures
-        assumeTrue(actual == expected);
+        assumeTrue(isServerUp);
 
-        assertEquals(expected, actual, "The add method should add two numbers");
+        System.out.println("    assumption is true");
     }
 
 }
