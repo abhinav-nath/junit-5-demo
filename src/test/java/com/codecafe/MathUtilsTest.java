@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
-
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.AfterAll;
@@ -13,6 +12,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 // unordered execution of tests
@@ -57,6 +57,24 @@ class MathUtilsTest {
         assertEquals(expected, actual, "The add method should add two numbers");
     }
 
+    @Nested
+    class SubstractTest {
+
+        @Test
+        @DisplayName("Testing subtract method for positive numbers")
+        void testSubtractPositive() {
+            System.out.println("  testSubtractPositive");
+            assertEquals(5, mathUtils.subtract(8, 3), "The result should be positive");
+        }
+
+        @Test
+        @DisplayName("Testing subtract method for negative numbers")
+        void testSubtractNegative() {
+            System.out.println("  testSubtractNegative");
+            assertEquals(-7, mathUtils.subtract(-5, 2), "The result should be negative");
+        }
+    }
+
     @Test
     @DisplayName("Testing divide method")
     void testDivide() {
@@ -74,7 +92,6 @@ class MathUtilsTest {
                 () -> assertEquals(0, mathUtils.multiply(2, 0), "2 * 0"),
                 () -> assertEquals(-2, mathUtils.multiply(2, -1), "2 * -1")
                 );
-
     }
 
     @Test
