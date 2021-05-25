@@ -2,11 +2,13 @@ package com.codecafe;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -66,6 +68,13 @@ class MathUtilsTest {
         double expected = 25.0;
         double actual = mathUtils.computeSquareArea(5);
         assertEquals(expected, actual, "Should return right Area of a Square");
+    }
+
+    @Test
+    @Disabled
+    @DisplayName("Under development! Should not be run!")
+    void disabledTest() {
+        fail("This test should be disabled");
     }
 
 }
