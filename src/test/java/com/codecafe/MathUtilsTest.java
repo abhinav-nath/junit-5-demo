@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 // unordered execution of tests
@@ -58,6 +59,7 @@ class MathUtilsTest {
     }
 
     @Nested
+    @DisplayName("subtract method test")
     class SubstractTest {
 
         @Test
@@ -94,7 +96,7 @@ class MathUtilsTest {
                 );
     }
 
-    @Test
+    @RepeatedTest(3)
     @DisplayName("Testing computeSquareArea method")
     void testComputeSquareArea() {
         System.out.println("  testComputeSquareArea");
