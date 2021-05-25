@@ -8,26 +8,31 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 // unordered execution of tests
 
-// in JUnit 5, every time a test runs,
-// a new instance of the class is created
+// We can use @TestInstance to create the instance of the Test Class
+// per class or per method
+// No need of static in @BeforeAll and @AfterAll if we are
+// using @TestInstance per class
 
-// i.e. a new instance of MathUtilsTest will be
-// created for every @Test execution
+// By default it is PER_METHOD
 
-class MathUtilsTest {
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class MathUtilsTestUsingTestInstance {
 
     MathUtils mathUtils;
 
+    // no need of static now
     @BeforeAll
-    static void beforeAllInit() {
+    void beforeAllInit() {
         System.out.println("Before All\n");
     }
 
+    // no need of static now
     @AfterAll
-    static void cleanUpAfterAll() {
+    void cleanUpAfterAll() {
         System.out.println("After All");
     }
 
