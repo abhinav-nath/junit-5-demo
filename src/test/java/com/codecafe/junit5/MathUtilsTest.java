@@ -1,4 +1,4 @@
-package com.codecafe;
+package com.codecafe.junit5;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;

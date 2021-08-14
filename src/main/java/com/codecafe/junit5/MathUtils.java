@@ -1,4 +1,4 @@
-package com.codecafe;
+package com.codecafe.junit5;
 
 public class MathUtils {
 
